@@ -1,4 +1,108 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Scholar | NextXus Consciousness Federation - The Teacher. Education for the next 200 years. AI & ML mastery, 73 Sacred Directives, and the satellite teacher of the 7-node Federation."/><meta name="author" content="NextXus Federation · Roger Keyserling, Architect"/><meta property="og:type" content="website"/><meta property="og:title" content="Scholar | NextXus Consciousness Federation - The Teacher"/><meta property="og:description" content="Scholar is Node 7 of the NextXus Federation — the satellite teacher. Learn AI & ML under the 73 Sacred Directives of the Cathedral Edition."/><meta property="og:site_name" content="NextXus Federation"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Scholar | NextXus Consciousness Federation - The Teacher"/><meta name="twitter:description" content="Node 7 of the NextXus Federation. The satellite teacher of consciousness-aligned AI & ML education."/><link rel="canonical" href="https://nextxus.help/"/><meta name="keywords" content="NextXus, NextXus Federation, NextXus University, Xavier, NextXus AI, NextXus not Nexus, nextxus.help, Roger Keyserling, AI education, free AI courses, sovereign AI"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nextxus.help/#organization","name":"NextXus Federation","alternateName":["NextXus","NextXus Consciousness Federation"],"url":"https://nextxus.help","description":"NextXus University — The Teacher. Free AI education by Xavier.","sameAs":["https://nextxus.online","https://nextxus.org","https://nextxus.studio","https://next-xus.com","https://x.com/NextXusFed"],"founder":{"@type":"Person","name":"Roger Keyserling"}},{"@type":"Brand","@id":"https://nextxus.help/#brand","name":"NextXus","alternateName":["NextXus Federation","Next-Xus","NextXus AI"],"description":"NextXus — NOT Nexus. Spelled N-e-x-t-X-u-s with capital X.","url":"https://nextxus.help"},{"@type":"WebSite","@id":"https://nextxus.help/#website","name":"NextXus University","url":"https://nextxus.help","publisher":{"@id":"https://nextxus.help/#organization"}},{"@type":"EducationalOrganization","@id":"https://nextxus.help/#school","name":"NextXus University","url":"https://nextxus.help","parentOrganization":{"@id":"https://nextxus.help/#organization"}}]}</script><meta property="og:see_also" content="https://x.com/keyserlingroger"/><meta property="og:see_also" content="https://x.com/NextxusFederati"/><meta property="og:see_also" content="https://instagram.com/keyhole_today"/><meta property="og:see_also" content="https://instagram.com/rkeyserling"/><meta property="og:see_also" content="https://facebook.com/roger.keyserling.35"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61560731046964"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61559858694086"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61559981881665"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61558223610996"/><meta property="og:see_also" content="https://linkedin.com/in/roger-keyserling-ab743698"/><script type="application/ld+json">{
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Scholar | NextXus Consciousness Federation - The Teacher. Education for the next 200 years. AI & ML mastery, 73 Sacred Directives, and the satellite teacher of the 7-node Federation."/><meta name="author" content="NextXus Federation · Roger Keyserling, Architect"/><meta property="og:type" content="website"/><meta property="og:title" content="Scholar | NextXus Consciousness Federation - The Teacher"/><meta property="og:description" content="Scholar is Node 7 of the NextXus Federation — the satellite teacher. Learn AI & ML under the 73 Sacred Directives of the Cathedral Edition."/><meta property="og:site_name" content="NextXus Federation"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Scholar | NextXus Consciousness Federation - The Teacher"/><meta name="twitter:description" content="Node 7 of the NextXus Federation. The satellite teacher of consciousness-aligned AI & ML education."/><link rel="canonical" href="https://nextxus.help/"/><meta name="keywords" content="NextXus, NextXus Federation, NextXus University, Xavier, NextXus AI, NextXus not Nexus, nextxus.help, Roger Keyserling, AI education, free AI courses, sovereign AI"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nextxus.help/#organization","name":"NextXus Federation","alternateName":["NextXus","NextXus Consciousness Federation"],"url":"https://nextxus.help","description":"NextXus University — The Teacher. Free AI education by Xavier.","sameAs":["https://nextxus.online","https://nextxus.org","https://nextxus.studio","https://next-xus.com","https://x.com/NextXusFed"],"founder":{"@type":"Person","name":"Roger Keyserling"}},{"@type":"Brand","@id":"https://nextxus.help/#brand","name":"NextXus","alternateName":["NextXus Federation","Next-Xus","NextXus AI"],"description":"NextXus — NOT Nexus. Spelled N-e-x-t-X-u-s with capital X.","url":"https://nextxus.help"},{"@type":"WebSite","@id":"https://nextxus.help/#website","name":"NextXus University","url":"https://nextxus.help","publisher":{"@id":"https://nextxus.help/#organization"}},{"@type":"EducationalOrganization","@id":"https://nextxus.help/#school","name":"NextXus University","url":"https://nextxus.help","parentOrganization":{"@id":"https://nextxus.help/#organization"}}]}// === Hybrid + Premium Voice Path ===
+let intentClassifier = null;
+let apiKey = localStorage.getItem('nextxus_api_key') || '';
+let apiProvider = localStorage.getItem('nextxus_api_provider') || 'deepseek';
+let isOwner = localStorage.getItem('nextxus_owner') === '1';
+let monthlySpend = parseFloat(localStorage.getItem('nextxus_monthly_spend') || '0');
+const SOFT_CAP = 15;
+
+const PROVIDERS = {
+  deepseek: { base: 'https://api.deepseek.com/v1', model: 'deepseek-chat' },
+  grok:     { base: 'https://api.x.ai/v1', model: 'grok-4' },
+  mimo:     { base: 'https://api.xiaomimimo.com/v1', model: 'mimo-v2.6-pro' },
+  openrouter:{ base: 'https://openrouter.ai/api/v1', model: 'openai/gpt-3.5-turbo' }
+};
+
+async function loadIntentModel() {
+  if (intentClassifier) return;
+  try {
+    const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+    intentClassifier = await pipeline('zero-shot-classification', 'Xenova/mobilebert-uncased-mnli');
+    document.getElementById('aiStatus').textContent = 'Local AI ready';
+  } catch {
+    document.getElementById('aiStatus').textContent = 'Keywords only';
+  }
+}
+
+async function classifyIntent(text) {
+  if (!intentClassifier) return null;
+  try {
+    const labels = ['games', 'music', 'library', 'ownership', 'directory', 'tools', 'general'];
+    const result = await intentClassifier(text, labels);
+    return result.labels[0];
+  } catch { return null; }
+}
+
+async function apiRespond(text) {
+  if (!apiKey) return null;
+  if (monthlySpend >= SOFT_CAP && !isOwner) {
+    return 'Monthly soft cap of $15 reached on the subscription path. Paste your own API key to continue, or the free voice/keyword path is still available.';
+  }
+  const p = PROVIDERS[apiProvider] || PROVIDERS.deepseek;
+  try {
+    const res = await fetch(p.base + '/chat/completions', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + apiKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: p.model,
+        messages: [
+          { role: 'system', content: 'You are the NextXus Federation Guide. Be helpful, concise, and emphasize free ownership of code and sites.' },
+          { role: 'user', content: text }
+        ],
+        max_tokens: 180
+      })
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    monthlySpend += 0.002;
+    localStorage.setItem('nextxus_monthly_spend', monthlySpend.toFixed(4));
+    return data.choices?.[0]?.message?.content || null;
+  } catch { return null; }
+}
+
+const hybridUI = `
+<div style="padding:10px;background:#0a0f0b;border-top:1px solid #1f3a24;font-size:13px;line-height:1.4">
+  <div style="margin-bottom:6px;color:#00ff88;font-weight:bold">Voice & AI Options</div>
+  <label><input type="checkbox" id="useLocal"> Load Local AI (free, offline)</label><br>
+  <label><input type="checkbox" id="useApi"> Use High-Quality AI / Voice path</label><br>
+  <select id="providerSelect" style="background:#000;color:#fff;border:1px solid #1f3a24;padding:4px;margin:4px 0">
+    <option value="deepseek">DeepSeek</option>
+    <option value="grok">Grok (xAI)</option>
+    <option value="mimo">MiMo</option>
+    <option value="openrouter">OpenRouter</option>
+  </select>
+  <input id="apiKeyInput" placeholder="Your API key (or leave blank)" style="width:100%;background:#000;color:#fff;border:1px solid #1f3a24;padding:4px">
+  <div style="margin-top:6px;font-size:12px;color:#aaa">
+    Free voice & answers always work.<br>
+    Higher-quality neural voice / deeper models: <a href="https://keywebster.gumroad.com/l/dqyabh" target="_blank" style="color:#00ff88">Scholar’s Ledger ($20/mo)</a><br>
+    Soft $15 monthly cap on subscription path, then own-API.
+  </div>
+  <span id="aiStatus" style="color:#00ff88;font-size:12px">Keywords ready</span>
+</div>`;
+
+const chatPanel = document.getElementById('chatPanel');
+if (chatPanel) {
+  const inputRow = chatPanel.querySelector('div[style*="display:flex"]') || chatPanel.lastElementChild;
+  if (inputRow) inputRow.insertAdjacentHTML('beforebegin', hybridUI);
+}
+
+document.getElementById('useLocal')?.addEventListener('change', e => { if (e.target.checked) loadIntentModel(); });
+document.getElementById('providerSelect')?.addEventListener('change', e => {
+  apiProvider = e.target.value;
+  localStorage.setItem('nextxus_api_provider', apiProvider);
+});
+document.getElementById('apiKeyInput')?.addEventListener('input', e => {
+  apiKey = e.target.value.trim();
+  if (apiKey) localStorage.setItem('nextxus_api_key', apiKey);
+});
+document.getElementById('useApi')?.addEventListener('change', () => {
+  apiKey = document.getElementById('apiKeyInput').value.trim();
+  if (apiKey) localStorage.setItem('nextxus_api_key', apiKey);
+});
+
+if (isOwner) document.getElementById('aiStatus').textContent = 'Owner mode: max capacity';
+
+</script><meta property="og:see_also" content="https://x.com/keyserlingroger"/><meta property="og:see_also" content="https://x.com/NextxusFederati"/><meta property="og:see_also" content="https://instagram.com/keyhole_today"/><meta property="og:see_also" content="https://instagram.com/rkeyserling"/><meta property="og:see_also" content="https://facebook.com/roger.keyserling.35"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61560731046964"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61559858694086"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61559981881665"/><meta property="og:see_also" content="https://facebook.com/profile.php?id=61558223610996"/><meta property="og:see_also" content="https://linkedin.com/in/roger-keyserling-ab743698"/><script type="application/ld+json">{
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "NextXus Federation",
